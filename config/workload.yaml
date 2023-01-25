@@ -1,0 +1,17 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: tap-kaniko-disk-full-issue
+  labels:
+    apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/has-tests: "true"
+    app.kubernetes.io/part-of: tap-kaniko-disk-full-issue
+spec:
+  params:
+  - name: dockerfile
+    value: Dockerfile
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/alexandreroman/tap-kaniko-disk-full-issue.git
